@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ | Accordion</title>
+    <link
+      rel="icon"
+      href="https://img.icons8.com/?size=160&id=3YGJglXYVMwx&format=png"
+      type="image/x-icon"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/7e99a9e738.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        line-height: 1.4em;
+        caret-color: transparent;
+      }
+
+      .container {
+        width: 70%;
+        margin: 1.2rem auto;
+      }
+
+      .HeaderBox {
+        background-color: black;
+        padding: 1.2rem 0rem;
+        margin-bottom: 0.6rem;
+        border: 1px solid whitesmoke;
+      }
+
+      .HeaderBox h1 {
+        text-align: center;
+        color: whitesmoke;
+      }
+
+      ul li {
+        list-style-type: none;
+      }
+
+      .Inside {
+        padding: 0.8rem 0.6rem;
+        background-color: orange;
+      }
+
+      .HeaderBox h1 span {
+        color: red;
+      }
+
+      .faq {
+        padding: 0.4rem 0.2rem;
+        height: auto;
+      }
+
+      .q {
+        padding: 0.4rem 0.2rem;
+        background-color: darkgray;
+        cursor: pointer;
+      }
+
+      .a {
+        padding: 0.8rem 0.6rem;
+        background-color: lightblue;
+        text-align: justify;
+        display: none;
+      }
+
+      #DropDown {
+        font-size: 1rem;
+        padding: 0rem 0.4rem;
+        cursor: pointer;
+        font-weight: 800;
+      }
+
+      #DropDown:hover {
+        color: white;
+      }
+
+      .rotate {
+        color: white;
+        transform: rotate(90deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="HeaderBox">
+        <h1>j<span>Q</span>uery FAQ Slider</h1>
+      </div>
+      <div class="AccrodionBox">
+        <div class="Inside"><h2>FAQ Slider Using jQuery</h2></div>
+        <div class="listOutside">
+          <ul id="faq">
+            <li class="q">
+              <i id="DropDown" class="fa-sharp fa-solid fa-greater-than"></i>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat,
+              eligendi ?
+            </li>
+            <li class="a">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              eaque blanditiis cupiditate nobis facilis voluptatem voluptatum
+              alias earum, mollitia ipsum impedit id qui laboriosam doloribus
+              facere ad soluta voluptates magnam!
+            </li>
+
+            <li class="q">
+              <i id="DropDown" class="fa-sharp fa-solid fa-greater-than"></i>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat,
+              eligendi ?
+            </li>
+            <li class="a">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              eaque blanditiis cupiditate nobis facilis voluptatem voluptatum
+              alias earum, mollitia ipsum impedit id qui laboriosam doloribus
+              facere ad soluta voluptates magnam!
+            </li>
+
+            <li class="q">
+              <i id="DropDown" class="fa-sharp fa-solid fa-greater-than"></i>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat,
+              eligendi ?
+            </li>
+            <li class="a">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              eaque blanditiis cupiditate nobis facilis voluptatem voluptatum
+              alias earum, mollitia ipsum impedit id qui laboriosam doloribus
+              facere ad soluta voluptates magnam!
+            </li>
+
+            <li class="q">
+              <i id="DropDown" class="fa-sharp fa-solid fa-greater-than"></i>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat,
+              eligendi ?
+            </li>
+            <li class="a">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              eaque blanditiis cupiditate nobis facilis voluptatem voluptatum
+              alias earum, mollitia ipsum impedit id qui laboriosam doloribus
+              facere ad soluta voluptates magnam!
+            </li>
+
+            <li class="q">
+              <i id="DropDown" class="fa-sharp fa-solid fa-greater-than"></i>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat,
+              eligendi ?
+            </li>
+            <li class="a">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              eaque blanditiis cupiditate nobis facilis voluptatem voluptatum
+              alias earum, mollitia ipsum impedit id qui laboriosam doloribus
+              facere ad soluta voluptates magnam!
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Creating and storing variables
+      var speed = 500;
+      var action = "click";
+
+      $(document).ready(function () {
+        $("li.q").on(action, function () {
+          $(this)
+            .next()
+            .slideToggle(speed)
+            // Siblings and slideup functions are used to hide sibling and display only one element when clicked
+            // .siblings("li.a")
+            // .slideUp();
+
+          // Dropdown buttons handling done by using jQuery
+          var DropDownButton = $(this).children("i");
+          $("i").not(DropDownButton).removeClass("rotate");
+          DropDownButton.toggleClass("rotate");
+
+          // Dropdown buttons handling done by using javascript
+          // const DropDownButtons = document.querySelectorAll('.fa-sharp');
+          // DropDownButtons.forEach((icon) => {
+          //     icon.addEventListener('click', () => {
+          //         icon.classList.toggle('rotate');
+          //     })
+          // })
+        });
+      });
+    </script>
+  </body>
+</html>

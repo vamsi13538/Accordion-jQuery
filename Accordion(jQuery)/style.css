@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.4em;
+    caret-color: transparent;
+}
+
+.container {
+    width: 70%;
+    margin: 1.2rem auto;
+}
+
+.HeaderBox {
+    background-color: black;
+    padding: 1.2rem 0rem;
+    margin-bottom: 0.6rem;
+    border: 1px solid whitesmoke;
+}
+
+.HeaderBox h1 {
+    text-align: center;
+    color: whitesmoke;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.Inside {
+    padding: 0.8rem 0.6rem;
+    background-color: orange;
+}
+
+.HeaderBox h1 span {
+    color: red;
+}
+
+.faq {
+    padding: 0.4rem 0.2rem;
+    height: auto;
+}
+
+.q {
+    padding: 0.4rem 0.2rem;
+    background-color: darkgray;
+    cursor: pointer;
+}
+
+.a {
+    padding: 0.8rem 0.6rem;
+    background-color: lightblue;
+    text-align: justify;
+    display: none;
+}
+
+#DropDown {
+    font-size: 1rem;
+    padding: 0rem 0.4rem;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+#DropDown:hover {
+    color: white;
+}
+
+.rotate {
+    color: white;
+    transform: rotate(90deg);
+}
